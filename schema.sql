@@ -1,2 +1,8 @@
 -- Create Schema for the database
 
+CREATE TABLE USER (
+    ID INT PRIMARY KEY,
+    NAME TEXT NOT NULL,
+    EMAIL TEXT NOT NULL,
+    USERNAME TEXT NOT NULL,
+);

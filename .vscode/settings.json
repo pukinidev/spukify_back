@@ -4,8 +4,8 @@
     {
       "previewLimit": 50,
       "driver": "SQLite",
-      "database": "\\\\wsl.localhost\\Ubuntu\\home\\pukini\\spukify.db",
-      "name": "spukifydb"
+      "database": "${workspaceFolder:spukify_back}/database/spukify.db",
+      "name": "spukify_db"
     }
   ]
 }
