@@ -1,5 +1,5 @@
 env
 .env
 credentials.json
-database/
+spukify.db
 .vscode/
