@@ -10,6 +10,6 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-@router.post("/createuser", tags=["Users"], response_model=User)
+@router.post("/create", tags=["Users"], response_model=User)
 def create_user(user: User, db: Session = Depends(get_db)):
     return create(db, user)

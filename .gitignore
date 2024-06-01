@@ -3,3 +3,6 @@ env
 credentials.json
 spukify.db
 .vscode/
+*.pyc
+*~
+*.swp
