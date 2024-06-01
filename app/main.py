@@ -5,7 +5,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
-from api import user_api, artist_api, album_api, track_api
+from apis import user_api, artist_api, album_api, track_api
 from config.database import engine
 from models import track_model, user_model, album_model, artist_model
 
