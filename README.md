@@ -2,7 +2,7 @@
 
 ## How to run the project?
 ### Local
-- First install dependencies and then in VSCODE just press play buttom. You need to change the database settings and use SQLITE, POSTGRESQL or another one of that you like.
+- First install dependencies and then in VSCODE just press play buttom. You need to change the database settings and use SQLITE, POSTGRESQL or another one that you like.
 ```python
 pip3 install -r requirements.txt
 ```
