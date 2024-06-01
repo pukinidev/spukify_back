@@ -35,7 +35,7 @@ TO-DO: Add a brief description
 
 The project also includes a file that generate data to fill the database. This file you can find it inside the data folder. It is needed a .env file to store you Spotify Credentials because the python library "Spotipy" needs to gather the information from spotify using those credentials. Also there are json files with data to fill the database if you need it on "/data/data_json/".
 
-- Remember to install spotipy using the next comand
+- Remember to install spotipy using the command
 
     ```python
     pip3 install spotipy
