@@ -12,7 +12,7 @@ TO-DO: Add a brief description
 
 ## How to run the project?
 ### Local
-- First install dependencies and then in Visual Studio Code just press play buttom. You need to change the database settings and use SQLITE, POSTGRESQL or another one that you like.
+- First install dependencies and then in Visual Studio Code just press play buttom. You need to change the database settings and use SQLITE, POSTGRESQL or another one that you like. Highly recommended the use of a python virtual environment!
 ```python
 pip3 install -r requirements.txt
 ```
