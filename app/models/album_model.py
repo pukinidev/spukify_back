@@ -9,4 +9,5 @@ class Album(Base):
     name = Column(String)
     cover = Column(String)
     artists = relationship("Artist", secondary="artist_albums", back_populates="albums")
+    tracks = relationship("Track", back_populates="album")
   
