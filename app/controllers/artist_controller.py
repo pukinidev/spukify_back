@@ -5,6 +5,7 @@ from schemas.artist_schema import Artist as ArtistSchema
 def create(db: Session, artist: ArtistSchema):
     db_artist = Artist(
         id=artist.id,
+        uri = artist.uri,
         name=artist.name,
         artist_image=artist.artist_image
     )
