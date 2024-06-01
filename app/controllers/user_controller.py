@@ -13,3 +13,14 @@ def create(db: Session, user: UserSchema):
     db.commit()
     db.refresh(db_user)
     return db_user
+
+def get_all(db: Session):
+    return db.query(User).all()
+
+def get_by_id(db: Session, user_id: int):
+    return db.query(User).filter(User.id == user_id).first()
+
+def delete_by_id(db: Session, user_id: int):
+    db.query(User).filter(User.id == user_id).delete()
+    db.commit()
+    return {"message": "User deleted successfully"}

@@ -25,7 +25,6 @@ app.include_router(category_router.router)
 # Create tables
 user_model.Base.metadata.create_all(bind=engine)
 
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
