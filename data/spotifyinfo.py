@@ -23,7 +23,16 @@ def get_artists() -> list:
     for i in range(0, 400, 50):
         results = sp.search(q='year:2024', type='artist', limit=50, offset=i)
         for artist in results['artists']['items']:
-            artists.append(artist)
+            artists.append({
+                'id': artist['id'],
+                'uri': artist['uri'],
+                'name': artist['name'],
+                'artists_image': artist['images'][0]['url']
+            })
+
+    with open('data_json/artists.json', 'w') as f:
+        json.dump(artists, f, indent=4)
+
     return artists
 
 def get_artist_albums(artist_uri: str) -> list:
@@ -34,5 +43,3 @@ def get_artist_albums(artist_uri: str) -> list:
             albums.append(album)
     return albums
 
-
-get_artist_albums('spotify:artist:06HL4z0CvFAxyc27GXpf02')

@@ -7,3 +7,5 @@ spukify.db
 *~
 *.swp
 spukify.db
+.cache
+
