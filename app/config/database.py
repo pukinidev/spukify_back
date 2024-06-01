@@ -2,7 +2,6 @@ from sqlalchemy import URL, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Uncomment the line below to use PostgreSQL
 SQLALCHEMY_DATABASE_URL = "postgresql://spukify:spukify@spukify-db:5432/spukify"
 #SQLALCHEMY_DATABASE_URL = "sqlite:///./spukify.db"
 
