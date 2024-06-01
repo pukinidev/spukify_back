@@ -5,7 +5,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip3 install fastapi uvicorn pydantic sqlalchemy psycopg2-binary
+RUN pip3 --no-cache install fastapi uvicorn pydantic sqlalchemy psycopg2-binary
 
 COPY ./app /app
 
