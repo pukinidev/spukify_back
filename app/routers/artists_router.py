@@ -3,7 +3,6 @@ from controllers.artist_controller import create, delete_by_id, get_all, get_by_
 from config.database import get_db
 from sqlalchemy.orm import Session
 from schemas.artist_schema import Artist
-from config.database import engine
 
 artists_router = APIRouter(
     prefix="/artists",
