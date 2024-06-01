@@ -5,28 +5,12 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
-from routers import user_router, track_router, playlist_router, album_router, artist_router, category_router
-from models import user_model, track_model, album_model, artist_model
-from config.database import engine
+from api import user_api
 
 app = FastAPI(
     title="Spukify Backend",
     description="This is the backend for the Spukify project",
 )
-
-# Routers
-app.include_router(user_router.router)
-app.include_router(track_router.router)
-app.include_router(playlist_router.router)
-app.include_router(album_router.router)
-app.include_router(artist_router.router)
-app.include_router(category_router.router)
-
-# Create tables
-user_model.Base.metadata.create_all(bind=engine)
-track_model.Base.metadata.create_all(bind=engine)
-album_model.Base.metadata.create_all(bind=engine)
-artist_model.Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,9 +20,13 @@ app.add_middleware(
     allow_credentials=True
 )
 
-@app.get("/")
-def main_function():
-    return RedirectResponse(url="/docs/")
+# Define the API routes
+app.mount("/users", user_api.usersapi)
+
+# Redirect to /docs
+@app.get("/users", include_in_schema=False)
+async def redirect_to_docs():
+    return RedirectResponse(url="users/docs")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8080, reload=True)
