@@ -20,7 +20,7 @@ TO-DO: Add a brief description
 
 ### Docker
 
-- Docker is required, download it from their official page (https://www.docker.com/products/docker-desktop/). Inside the project folder you find the Dockerfile and the docker-compose.yml that is alredy configured with a POSTGRESQL database and a python container to run the fastapi app. In the root of project, run the next command to deploy the containers in docker.
+- Docker is required, download it from their official page (https://www.docker.com/products/docker-desktop/). Inside the project folder you find the Dockerfile and the docker-compose.yml that is alredy configured with a POSTGRESQL database and a container to run the fastapi app. In the root of project, run the next command to deploy the containers in docker.
 
     ```docker
     docker-compose up -d
