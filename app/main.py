@@ -5,7 +5,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
-from apis import user_api, artist_api, album_api, track_api
+from routers import users_router, tracks_router, albums_router, artists_router
 from config.database import engine
 from models import track_model, user_model, album_model, artist_model
 
@@ -27,28 +27,9 @@ app.add_middleware(
     allow_credentials=True
 )
 
-# Define the API routes
-app.mount("/users", user_api.usersapi)
-app.mount("/artists", artist_api.artistsapi)
-app.mount("/albums", album_api.albumsapi)
-app.mount("/tracks", track_api.tracksapi)
+app.include_router(users_router.users_router)
+app.include_router(artists_router.artists_router)
 
-# Redirect to /docs
-@app.get("/users", include_in_schema=False)
-async def redirect_to_docs():
-    return RedirectResponse(url="users/docs")
-
-@app.get("/artists", include_in_schema=False)
-async def redirect_to_docs():
-    return RedirectResponse(url="artists/docs")
-
-@app.get("/albums", include_in_schema=False)
-async def redirect_to_docs():
-    return RedirectResponse(url="albums/docs")
-
-@app.get("/tracks", include_in_schema=False)
-async def redirect_to_docs():
-    return RedirectResponse(url="tracks/docs")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8080, reload=True)
