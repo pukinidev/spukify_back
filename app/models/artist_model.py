@@ -10,6 +10,7 @@ artist_albums = Table('artist_albums', Base.metadata,
 class Artist(Base):
     __tablename__ = "artists"
     id = Column(String, primary_key=True)
+    uri = Column(String, unique=True)
     name = Column(String)
     artist_image = Column(String)
     tracks = relationship("Track", secondary="track_artists", back_populates="artists")
