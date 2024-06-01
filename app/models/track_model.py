@@ -17,4 +17,4 @@ class Track(Base):
     cover = Column(String)
     album_id = Column(String, ForeignKey("albums.id"))
     album = relationship("Album", back_populates="tracks")
-    artists = relationship("Artist", secondary=track_artists, back_populates="tracks")
+    artists = relationship("Artist", secondary="track_artists", back_populates="tracks")
