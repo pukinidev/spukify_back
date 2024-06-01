@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 from routers import user_router, track_router, playlist_router, album_router, artist_router, category_router
-from models import user_model
+from models import user_model, track_model, album_model, artist_model
 from config.database import engine
 
 app = FastAPI(
@@ -24,6 +24,9 @@ app.include_router(category_router.router)
 
 # Create tables
 user_model.Base.metadata.create_all(bind=engine)
+track_model.Base.metadata.create_all(bind=engine)
+album_model.Base.metadata.create_all(bind=engine)
+artist_model.Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
