@@ -27,7 +27,7 @@ def get_artists() -> list:
                 'id': artist['id'],
                 'uri': artist['uri'],
                 'name': artist['name'],
-                'artists_image': artist['images'][0]['url']
+                'artist_image': artist['images'][0]['url']
             })
 
     with open('data_json/artists.json', 'w') as f:
@@ -43,3 +43,4 @@ def get_artist_albums(artist_uri: str) -> list:
             albums.append(album)
     return albums
 
+get_artists()
