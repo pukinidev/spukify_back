@@ -17,10 +17,10 @@ def create(db: Session, user: UserSchema):
 def get_all(db: Session):
     return db.query(User).all()
 
-def get_by_id(db: Session, user_id: int):
+def get_by_id(db: Session, user_id: str):
     return db.query(User).filter(User.id == user_id).first()
 
-def delete_by_id(db: Session, user_id: int):
+def delete_by_id(db: Session, user_id: str):
     db.query(User).filter(User.id == user_id).delete()
     db.commit()
     return {"message": "User deleted successfully"}

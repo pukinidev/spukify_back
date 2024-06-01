@@ -6,6 +6,7 @@ def create(db: Session, artist: ArtistSchema):
     db_artist = Artist(
         id=artist.id,
         name=artist.name,
+        artist_image=artist.artist_image
     )
     db.add(db_artist)
     db.commit()
@@ -15,10 +16,10 @@ def create(db: Session, artist: ArtistSchema):
 def get_all(db: Session):
     return db.query(Artist).all()
 
-def get_by_id(db: Session, artist_id: int):
+def get_by_id(db: Session, artist_id: str):
     return db.query(Artist).filter(Artist.id == artist_id).first()
 
-def delete_by_id(db: Session, artist_id: int):
+def delete_by_id(db: Session, artist_id: str):
     db.query(Artist).filter(Artist.id == artist_id).delete()
     db.commit()
     return {"message": "Artist deleted successfully"}

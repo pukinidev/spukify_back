@@ -11,5 +11,6 @@ class Artist(Base):
     __tablename__ = "artists"
     id = Column(String, primary_key=True)
     name = Column(String)
+    artist_image = Column(String)
     tracks = relationship("Track", secondary="track_artists", back_populates="artists")
     albums = relationship("Album", secondary="artist_albums", back_populates="artists")
