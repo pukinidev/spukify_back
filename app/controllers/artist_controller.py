@@ -23,4 +23,4 @@ def get_by_id(db: Session, artist_id: str):
 def delete_by_id(db: Session, artist_id: str):
     db.query(Artist).filter(Artist.id == artist_id).delete()
     db.commit()
-    return {"message": "Artist deleted successfully"}
+    return {"message": f"Artist with id {artist_id} deleted successfully"}
