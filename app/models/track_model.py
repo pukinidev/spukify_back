@@ -11,6 +11,7 @@ track_artists = Table('artists_tracks', Base.metadata,
 class Track(Base):
     __tablename__ = "tracks"
     id = Column(String, primary_key=True)
+    uri = Column(String, unique=True)
     name = Column(String)
     duration = Column(Integer)
     explicit = Column(Boolean)
