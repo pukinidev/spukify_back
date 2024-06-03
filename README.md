@@ -8,7 +8,9 @@ Valeria Caro
 
 ### Description
 
-TO-DO: Add a brief description
+Spukify Backend is a project for the Spukify Mobile and Web versions. This is a music API that includes models such as
+
+Users (From Firebase Database), Tracks, Albums and Artists.
 
 ## Database Design
 
