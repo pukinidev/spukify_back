@@ -2,6 +2,7 @@ from pydantic import BaseModel
 
 class Track(BaseModel):
     id: str
+    uri: str
     name: str
     duration: int
     explicit: bool
