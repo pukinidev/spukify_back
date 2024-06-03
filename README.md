@@ -10,15 +10,11 @@ Valeria Caro
 
 TO-DO: Add a brief description
 
-## Database Diagram
-
+## Database Design
 
 ![title](public/Diagram.png)
 
-
 ## How to run the project?
-
-
 
 ### Local
 
