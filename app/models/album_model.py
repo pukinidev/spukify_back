@@ -15,6 +15,6 @@ class Album(Base):
     name = Column(String)
     cover = Column(String)
     album_type = Column(Enum(AlbumType))
-    artists = relationship("Artist", secondary="artist_albums", back_populates="albums")
+    artists = relationship("Artist", secondary="artists_albums", back_populates="albums")
     tracks = relationship("Track", back_populates="album")
   

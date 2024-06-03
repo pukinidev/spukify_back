@@ -2,7 +2,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 from config.database import Base
 
-track_artists = Table('track_artists', Base.metadata, 
+track_artists = Table('artists_tracks', Base.metadata, 
     Column('track_id', String, ForeignKey('tracks.id')),
     Column('artist_id', String, ForeignKey('artists.id'))
 )
@@ -17,4 +17,4 @@ class Track(Base):
     cover = Column(String)
     album_id = Column(String, ForeignKey("albums.id"))
     album = relationship("Album", back_populates="tracks")
-    artists = relationship("Artist", secondary="track_artists", back_populates="tracks")
+    artists = relationship("Artist", secondary="artists_tracks", back_populates="tracks")
