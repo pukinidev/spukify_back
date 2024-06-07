@@ -12,6 +12,6 @@ class Artist(Base):
     id = Column(String, primary_key=True)
     uri = Column(String, unique=True)
     name = Column(String)
-    artist_image = Column(String)
+    image = Column(String)
     tracks = relationship("Track", secondary="artists_tracks", back_populates="artists")
     albums = relationship("Album", secondary="artists_albums", back_populates="artists")
