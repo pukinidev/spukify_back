@@ -6,7 +6,7 @@ from schemas.album_schema import Album
 
 albums_router = APIRouter(
     prefix="/albums",
-    tags=["albums"],
+    tags=["Albums"],
 )
 
 @albums_router.post("/create", tags=["albums"], response_model=Album)

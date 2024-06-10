@@ -6,8 +6,8 @@ def create(db: Session, user: UserSchema):
     db_user = User(
         id=user.id,
         email=user.email,
-        user_name=user.user_name,
-        profile_picture=user.profile_picture
+        username=user.username,
+        image=user.image
     )
     db.add(db_user)
     db.commit()
