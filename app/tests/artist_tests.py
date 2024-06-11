@@ -17,4 +17,4 @@ def get_artists():
     json_response = response.json()
     print(json.dumps(json_response, indent=4))
 
-# 
+populate_artists()

@@ -20,14 +20,14 @@ Parameters:
 
 def get_artists() -> list:
     artists = []
-    for i in range(0, 400, 50):
+    for i in range(0, 300, 50):
         results = sp.search(q='year:2024', type='artist', limit=50, offset=i)
         for artist in results['artists']['items']:
             artists.append({
                 'id': artist['id'],
                 'uri': artist['uri'],
                 'name': artist['name'],
-                'artist_image': artist['images'][0]['url']
+                'image': artist['images'][0]['url']
             })
 
     with open('data_json/artists.json', 'w') as f:

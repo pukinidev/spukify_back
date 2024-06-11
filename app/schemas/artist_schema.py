@@ -4,7 +4,7 @@ class Artist(BaseModel):
     id: str
     uri: str
     name: str
-    artist_image: str
+    image: str
 
     class Config:
         from_attributes = True

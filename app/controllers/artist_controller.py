@@ -7,7 +7,7 @@ def create(db: Session, artist: ArtistSchema):
         id=artist.id,
         uri = artist.uri,
         name=artist.name,
-        artist_image=artist.artist_image
+        image=artist.image
     )
     db.add(db_artist)
     db.commit()

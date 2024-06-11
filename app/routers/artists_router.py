@@ -11,8 +11,6 @@ artists_router = APIRouter(
 
 @artists_router.post("/create", tags=['Artists'], response_model=Artist)
 def create_artist(artist: Artist, db: Session = Depends(get_db)):
-    if artist:
-        raise HTTPException(status_code=400, detail=f"Artist with id {artist.id} already exists!")
     return create(db, artist)
 
 @artists_router.get("/", tags=['Artists'], response_model=list[Artist])
