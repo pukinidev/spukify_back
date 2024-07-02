@@ -9,11 +9,11 @@ albums_router = APIRouter(
     tags=["Albums"],
 )
 
-@albums_router.post("/create", tags=["albums"], response_model=Album)
+@albums_router.post("/create", tags=["Albums"], response_model=Album)
 def create_album(album: Album, db: Session = Depends(get_db)):
     return create(db, album)
 
-@albums_router.get("/", tags=["albums"], response_model=list[Album])
+@albums_router.get("/", tags=["Albums"], response_model=list[Album])
 def get_all_albums(db: Session = Depends(get_db)):
     return get_all(db)
 
