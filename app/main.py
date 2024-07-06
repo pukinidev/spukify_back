@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
-from routers import users_router, artists_router, albums_router
+from routers import users_router, artists_router, albums_router, tracks_router
 from config.database import engine
 from models import track_model, user_model, album_model, artist_model
 
@@ -38,6 +38,7 @@ app.add_middleware(
 app.include_router(users_router.users_router)
 app.include_router(artists_router.artists_router)
 app.include_router(albums_router.albums_router)
+app.include_router(tracks_router.tracks_router)
 
 
 # Redirect to the documentation

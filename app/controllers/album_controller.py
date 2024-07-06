@@ -18,3 +18,12 @@ def create(db: Session, album: AlbumSchema):
 def get_all(db: Session):
     return db.query(Album).all()
 
+
+def get_by_id(db: Session, album_id: str):
+    return db.query(Album).filter(Album.id == album_id).first()
+
+def delete_by_id(db: Session, album_id: str):
+    db.query(Album).filter(Album.id == album_id).delete()
+    db.commit()
+    return {"message": f"Album with id {album_id} deleted successfully"}
+

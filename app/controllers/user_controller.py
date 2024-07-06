@@ -23,4 +23,4 @@ def get_by_id(db: Session, user_id: str):
 def delete_by_id(db: Session, user_id: str):
     db.query(User).filter(User.id == user_id).delete()
     db.commit()
-    return {"message": "User deleted successfully"}
+    return {"message": f"User with id {user_id} deleted successfully"}
