@@ -30,7 +30,7 @@ def get_artists() -> list:
                 'image': artist['images'][0]['url']
             })
 
-    with open('data_json/artists.json', 'w') as f:
+    with open('data_json_artists/artists.json', 'w') as f:
         json.dump(artists, f, indent=4)
 
     return artists
