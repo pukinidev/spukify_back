@@ -9,13 +9,19 @@ tracks_router = APIRouter(
     tags=["Tracks"],
 )
 
+@tracks_router.get("/",tags=['Tracks'], response_model=list[Track])
+def get_all_tracks(db: Session = Depends(get_db)):
+    return get_all(db)
+
 @tracks_router.post("/create", tags=["Tracks"], response_model=Track)
 def create_track(track: Track, db: Session = Depends(get_db)):
     return create(db, track)
 
-@tracks_router.get("/",tags=['Tracks'], response_model=list[Track])
-def get_all_tracks(db: Session = Depends(get_db)):
-    return get_all(db)
+@tracks_router.post("/createtracks", tags=["Tracks"], response_model=list[Track])
+def create_tracks(tracks: list[Track], db: Session = Depends(get_db)):
+    for track in tracks:
+        create(db, track)
+    return tracks
 
 @tracks_router.get("/{track_id}",tags=['Tracks'], response_model=Track)
 def get_user_by_id(track_id: str, db: Session = Depends(get_db)):
